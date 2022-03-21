@@ -1,20 +1,6 @@
 //Arrays
-const greet = ["hola","hola amigo","hi", "hello", "hey", "helloo", "hellooo", "g morining", "gmorning", "good morning", "morning", "good day", "good afternoon", "good evening", "greetings", "greeting", "good to see you", "its good seeing you", "how are you", "how are ya", "how're you", "how are you doing", "how ya doin'", "how ya doin", "how is everything", "how is everything going", "how's everything going", "how is you", "how's you", "how are things", "how're things", "how is it going", "how's it going", "how's it goin'", "how's it goin", "how is life been treating you", "how's life been treating you", "how have you been", "how've you been", "what is up", "what's up", "what is cracking", "what's cracking", "what is good", "what's good", "what is happening", "what's happening", "what is new", "what's new", "what is neww", "g’day", "howdy"];
+//const greet = ["hola","hola amigo","hi", "hello", "hey", "helloo", "hellooo", "g morining", "gmorning", "good morning", "morning", "good day", "good afternoon", "good evening", "greetings", "greeting", "good to see you", "its good seeing you", "how are you", "how are ya", "how're you", "how are you doing", "how ya doin'", "how ya doin", "how is everything", "how is everything going", "how's everything going", "how is you", "how's you", "how are things", "how're things", "how is it going", "how's it going", "how's it goin'", "how's it goin", "how is life been treating you", "how's life been treating you", "how have you been", "how've you been", "what is up", "what's up", "what is cracking", "what's cracking", "what is good", "what's good", "what is happening", "what's happening", "what is new", "what's new", "what is neww", "g’day", "howdy"];
 
-// function startHere(){
-//     var UserInput = window.prompt("Can we start the bot : ");
-
-//     if(UserInput=='No' || UserInput=='no'){
-//         window.alert("Fuck Off\nNot in the mood");
-//     }
-//     else if(UserInput=='Yes' || UserInput=='yes'){
-//         var Botchat = window.prompt("Pugazh Bot says what ? : ");
-//         createBotReply(Botchat);
-//     }
-//     else{
-//         window.alert("Invalid Input\n");
-//     }
-// }
 
 function startHere(){
     askQst();
@@ -166,6 +152,52 @@ function getDate(){
     setTimeout(function(){createBotReply(someString); },3000);
 }
 
+/*5a. getDay*/
+function getDay(){
+    var value = new Date();
+
+    var days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+
+    someString = "Today is \""+days[value.getDay()]+"\"";
+    
+    //createBotReply(someString);
+    setTimeout(function(){createBotReply(someString); },3000);
+}
+
+/*5b. getMonth*/
+function getMonth(){
+    var value = new Date();
+
+    var months = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+
+    someString = "The present month is \"" + months[value.getMonth()] + "\"";
+    
+    //createBotReply(someString);
+    setTimeout(function(){createBotReply(someString); },3000);
+}
+
+/*5c. getYear*/
+function getYear(){
+    var value = new Date();
+
+    someString = "This is \"" + value.getFullYear() + "\"\n";
+    
+    //createBotReply(someString);
+    setTimeout(function(){createBotReply(someString); },3000);
+}
+
+/*6. getJoke*/
+function getJoke(){
+    //var len = jokes.length+1;
+    var index = Math.floor(Math.random() * 100);
+
+    //var someString = jokes[index].replace(/0-9/g,'')
+    //someString = someString.replace(/./g,'');
+    //var someString = jokes[index];
+
+    setTimeout(function(){createBotReply(jokes[index]); },3000);
+}
+
 /*2. date, time, month, year*/
 function nextSearch(chatArr){
     let chk=0;
@@ -189,10 +221,30 @@ function nextSearch(chatArr){
             chk=1;
             break;
         } 
+        else if((chatArr.includes("day") && chatArr.includes("what") && chatArr.includes("today"))||(chatArr.includes("day") && chatArr.includes("what") && chatArr.includes("what"))){
+            getDay(chatArr);
+            chk=1;
+            break;
+        }
+        else if((chatArr.includes("month") && chatArr.includes("what") && (chatArr.includes("this")||chatArr.includes("present")))||(chatArr.includes("month") && chatArr.includes("what") && chatArr.includes("it"))){
+            getMonth(chatArr);
+            chk=1;
+            break;
+        }
+        else if((chatArr.includes("year") && chatArr.includes("what") && (chatArr.includes("this")||chatArr.includes("present")))||(chatArr.includes("year") && chatArr.includes("what") && chatArr.includes("it"))){
+            getYear(chatArr);
+            chk=1;
+            break;
+        }
+        else if((chatArr.includes("tell") && chatArr.includes("me") && (chatArr.includes("joke")))||(chatArr.includes("tell") && chatArr.includes("joke"))){
+            getJoke();
+            chk=1;
+            break;
+        }
     }
 
     if(chk==0){
-        setTimeout( function() { createBotReply("Sorry I am not able to understand!!!"); }, 2000);
+        setTimeout( function() { createBotReply("Sorry, I'm unable to understand what you are saying.\n Can you kindly Rephrase"); }, 2000);
     }
 }
 
