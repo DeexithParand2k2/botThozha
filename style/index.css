@@ -82,3 +82,29 @@ font-family: 'VT323', monospace;
     border-radius: 50px;
     cursor: pointer;
 }
+
+.gameCanvas{
+    height: 300px;
+    width: 400px;
+    box-sizing: border-box;
+
+    margin: 10px;
+
+    display: flex;
+    flex-direction: row;
+
+    border: dashed 3px white;
+
+    align-self: center;
+
+    display: none;
+}
+
+.userHand{
+    flex: 1;
+    border-left: dashed 3px white;
+}
+
+.botHand{
+    flex: 1;
+}

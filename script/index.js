@@ -1,5 +1,5 @@
 //Arrays
-const greet = ["hola","hola amigo","hi", "hello", "hey", "helloo", "hellooo", "g morining", "gmorning", "good morning", "morning", "good day", "good afternoon", "good evening", "greetings", "greeting", "good to see you", "its good seeing you", "how are you", "how're you", "how are you doing", "how ya doin'", "how ya doin", "how is everything", "how is everything going", "how's everything going", "how is you", "how's you", "how are things", "how're things", "how is it going", "how's it going", "how's it goin'", "how's it goin", "how is life been treating you", "how's life been treating you", "how have you been", "how've you been", "what is up", "what's up", "what is cracking", "what's cracking", "what is good", "what's good", "what is happening", "what's happening", "what is new", "what's new", "what is neww", "g’day", "howdy"];
+const greet = ["hola","hola amigo","hi", "hello", "hey", "helloo", "hellooo", "g morining", "gmorning", "good morning", "morning", "good day", "good afternoon", "good evening", "greetings", "greeting", "good to see you", "its good seeing you", "how are you", "how are ya", "how're you", "how are you doing", "how ya doin'", "how ya doin", "how is everything", "how is everything going", "how's everything going", "how is you", "how's you", "how are things", "how're things", "how is it going", "how's it going", "how's it goin'", "how's it goin", "how is life been treating you", "how's life been treating you", "how have you been", "how've you been", "what is up", "what's up", "what is cracking", "what's cracking", "what is good", "what's good", "what is happening", "what's happening", "what is new", "what's new", "what is neww", "g’day", "howdy"];
 
 // function startHere(){
 //     var UserInput = window.prompt("Can we start the bot : ");
@@ -120,7 +120,7 @@ function greetchat(chatArr){
 
 }
 
-/*3. Reply*/
+/*3. getTime*/
 function getTime(chatArr){
     var time = new Date();
 
@@ -139,6 +139,31 @@ function gameStart(){
     setTimeout(function(){createBotReply("Why not, Best of 3 Wins..."); },2000);
     setTimeout(function(){createBotReply("Game will start in 5 seconds..."); },3000);
     //createBotReply("Game will start in 5 seconds...");
+
+    //var temp = document.getElementsByClassName("gameCanvas")[0]; 
+    setTimeout(function(){
+        var temp = document.getElementById("gameCanvas");
+        temp.style.display = "flex";
+        var parent = document.getElementById('main');
+        parent.appendChild(temp);
+         
+        //console.log("Hello");
+    },5000);
+}
+
+/*5. getDate*/
+function getDate(){
+    var value = new Date();
+    
+    if(value.getMonth()+1 < 9){
+        var someString = "Today's date is : "+value.getDate()+"-0"+(value.getMonth()+1)+"-"+value.getFullYear();
+    }
+    else{
+        var someString = "Today's date is : "+value.getDate()+"-"+(value.getMonth()+1)+"-"+value.getFullYear();
+    }
+    
+    //createBotReply(someString);
+    setTimeout(function(){createBotReply(someString); },3000);
 }
 
 /*2. date, time, month, year*/
@@ -156,6 +181,11 @@ function nextSearch(chatArr){
         (chatArr.includes("game") && chatArr.includes("we") && chatArr.includes("can"))){
             gameStart();
             //createBotReply("Why not, Best of 3 Wins...");
+            chk=1;
+            break;
+        }
+        else if((chatArr.includes("date") && chatArr.includes("today"))){
+            getDate(chatArr);
             chk=1;
             break;
         } 
