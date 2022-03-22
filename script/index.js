@@ -107,17 +107,12 @@ function greetchat(chatArr){
 }
 
 /*3. getTime*/
-function getTime(chatArr){
+function getTime(){
     var time = new Date();
 
-    for(let i=0;i<chatArr.length;i++){
-        if((chatArr.includes("time") && chatArr.length==1) || (chatArr.includes("time") && chatArr.includes("please")) || (chatArr.includes("time") && chatArr.includes("now"))){
-            setTimeout( function() { 
-            createBotReply("Time now is : \""+time.toLocaleTimeString()+"\"");
-            }, 2000);
-            break;
-        }
-    }
+    setTimeout( function() { 
+        createBotReply("Time now is : \""+time.toLocaleTimeString()+"\"");
+    }, 2000);
 }
 
 /*4. Game Start*/
@@ -170,7 +165,7 @@ function getMonth(){
 
     var months = ["January","February","March","April","May","June","July","August","September","October","November","December"];
 
-    someString = "The present month is \"" + months[value.getMonth()] + "\"";
+    someString = "This month is : \"" + months[value.getMonth()] + "\"";
     
     //createBotReply(someString);
     setTimeout(function(){createBotReply(someString); },3000);
@@ -191,11 +186,9 @@ function getJoke(){
     //var len = jokes.length+1;
     var index = Math.floor(Math.random() * 100);
 
-    //var someString = jokes[index].replace(/0-9/g,'')
-    //someString = someString.replace(/./g,'');
-    //var someString = jokes[index];
+    var someString = jokes[index];
 
-    setTimeout(function(){createBotReply(jokes[index]); },3000);
+    setTimeout(function(){createBotReply(someString); },3000);
 }
 
 /*2. date, time, month, year*/
@@ -203,8 +196,8 @@ function nextSearch(chatArr){
     let chk=0;
 
     for(let i=0;i<chatArr.length;i++){
-        if((chatArr.includes("time") && chatArr.length==1) || (chatArr.includes("time") && chatArr.includes("please")) || (chatArr.includes("time") && chatArr.includes("now"))){
-            getTime(chatArr);
+        if((chatArr.includes("time") && chatArr.length==1) || (chatArr.includes("time") && chatArr.includes("is") && chatArr.includes("it")) || (chatArr.includes("time") && chatArr.includes("please")) || (chatArr.includes("time") && chatArr.includes("now"))){
+            getTime();
             chk=1;
             break;
         }
@@ -217,22 +210,22 @@ function nextSearch(chatArr){
             break;
         }
         else if((chatArr.includes("date") && chatArr.includes("today"))){
-            getDate(chatArr);
+            getDate();
             chk=1;
             break;
         } 
-        else if((chatArr.includes("day") && chatArr.includes("what") && chatArr.includes("today"))||(chatArr.includes("day") && chatArr.includes("what") && chatArr.includes("what"))){
-            getDay(chatArr);
+        else if((chatArr.includes("day") && chatArr.includes("what") && chatArr.includes("today"))||(chatArr.includes("day") && chatArr.includes("what") && chatArr.includes("it"))){
+            getDay();
             chk=1;
             break;
         }
         else if((chatArr.includes("month") && chatArr.includes("what") && (chatArr.includes("this")||chatArr.includes("present")))||(chatArr.includes("month") && chatArr.includes("what") && chatArr.includes("it"))){
-            getMonth(chatArr);
+            getMonth();
             chk=1;
             break;
         }
         else if((chatArr.includes("year") && chatArr.includes("what") && (chatArr.includes("this")||chatArr.includes("present")))||(chatArr.includes("year") && chatArr.includes("what") && chatArr.includes("it"))){
-            getYear(chatArr);
+            getYear();
             chk=1;
             break;
         }
@@ -240,6 +233,27 @@ function nextSearch(chatArr){
             getJoke();
             chk=1;
             break;
+        }
+        else if((chatArr.includes("make") && chatArr.includes("me") && (chatArr.includes("happy")))|| (chatArr.includes("i") && chatArr.includes("am") && (chatArr.includes("sad"))) ||(chatArr.includes("entertain") && chatArr.includes("me"))){
+            setTimeout(function(){createBotReply("Can I tell you a joke?"); },1000);
+            var reply;
+            //setTimeout(function(){
+                reply = window.prompt("Reply if you want a joke : ");
+                reply = reply.toLowerCase();
+            //},3000);
+            
+            if(reply=="yes"){
+                setTimeout(function(){createUserReply("yes"); },3000);
+                getJoke();
+                chk=1;
+                break;
+            }
+            else{
+                setTimeout(function(){createUserReply("no"); },3000);
+                setTimeout(function(){createBotReply("As you say, Sir"); },3000);
+                chk=1;
+                break;
+            }
         }
     }
 
