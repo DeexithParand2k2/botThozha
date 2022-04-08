@@ -74,7 +74,7 @@ font-family: 'VT323', monospace;
     position: absolute;
     /* top: 90%;
     left: 95%; */
-    top: 5%;
+    top: 20%;
     left: 50%;
     /* background-color: rgba(240,248,250,0.8); */
     background-color: aliceblue;
@@ -107,4 +107,47 @@ font-family: 'VT323', monospace;
 
 .botHand{
     flex: 1;
+}
+
+.chatFoot{
+    /* padding: 10px;
+    margin: 20px; */
+    box-sizing: border-box;
+
+    background-color: transparent;
+    border: 1px solid bisque;
+
+    width: 100%;
+    height: auto;
+
+    border-radius: 5px;
+    background-color: beige;
+
+    display: flex;
+    justify-content: space-between;
+}
+
+.inputBox{
+    background-color: transparent;
+    border: none;
+}
+
+#send{
+    margin: 5px;
+    padding: 5px;
+    background-color: transparent;
+    color: #121212;
+}
+
+#send:hover{
+    opacity: 0.6;
+}
+
+.marginDiv{
+    background-color: transparent;
+    height: 50px;
+    padding: 30px;
+
+    top: 0;
+    position: sticky;
 }

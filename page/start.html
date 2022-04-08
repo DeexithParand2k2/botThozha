@@ -32,26 +32,32 @@
                 <div class="holes"></div>
             </div>
             <div class="film">
+
                 <div class="screen"></div>
-                <div class="screen">
-                    <i class="fas fa-chess-king fa-4x"></i>
-                    <div  id="male">
+
+                <div class="screen" id="maleScr">
+                    <i class="fas fa-chess-king fa-4x" id="kingCoin" style="display:none;"  onclick="genderMsgMale()"></i>
+                    <div  id="male" style="display:none;">
                         Hi!<br>I'm Pugazh<br>
                     </div>
                 </div>
-                <div class="screen">
+
+                <div class="screen" onclick="genderPage()">
                     <div>
                         <h1>Welcome</h1><br>Thozha<br><br><br><br>
-                        Click to Start
+                        <div id="innerText">Click to Start</div>
                     </div>
                 </div>
-                <div class="screen">
-                    <i class="fas fa-chess-queen fa-4x"></i>
-                    <div  id="female">
+
+                <div class="screen" id="femaleScr">
+                    <i class="fas fa-chess-queen fa-4x" id="queenCoin" style="display:none;"  onclick="genderMsgFemale()"></i>
+                    <div  id="female" style="display:none;">
                         Hi!<br>I'm Kayal<br>
                     </div>
                 </div>
+
                 <div class="screen"></div>
+
             </div>
             <div class="filmBorder">
                 <div class="holes"></div>
@@ -78,4 +84,5 @@
             </div>
         </div>
     </body>
+    <script rel="script" type="text/javascript" src="../script/start.js"></script>
 </html>

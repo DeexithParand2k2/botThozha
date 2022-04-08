@@ -78,6 +78,8 @@ font-family: 'Press Start 2P', cursive;
     color: whitesmoke;
     font-size: small;
 
+    cursor: pointer;
+
     animation: changeColor 10s infinite;
 }
 
@@ -146,6 +148,7 @@ font-family: 'Press Start 2P', cursive;
 }
 
 #male, #female{
+    align-self: flex-start;
     position: relative;
     padding: 5px;
     margin: 10px;
