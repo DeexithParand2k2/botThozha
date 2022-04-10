@@ -31,6 +31,10 @@ function genderPage(){
     }
     else{
         tempText.innerHTML = "Starting Chat...";
+        setTimeout( function() { 
+            //window.open("");
+            window.open("C:/Users/deexi/OneDrive/Desktop/Thozha/index.html","_self");
+        }, 2000);
     }
      
 }
@@ -40,6 +44,7 @@ function genderMsgMale(){
     tempFemaleMsg.style.display = "none";
     //this value is to be shared
     selectedGender = "Pugazh";
+    localStorage.setItem('selectedGender', selectedGender);
 
     tempText.innerHTML = "Can we confirm"+ "<br />" + "&nbsp;&nbsp;Bot Pugazh";
 }
@@ -49,6 +54,7 @@ function genderMsgFemale(){
     tempFemaleMsg.style.display = "block";
     //this value is to be shared
     selectedGender = "Kayal";
+    localStorage.setItem('selectedGender', selectedGender);
 
     tempText.innerHTML = "Can we confirm" + "<br />" + "&nbsp;&nbsp;Bot Kayal";
 }
