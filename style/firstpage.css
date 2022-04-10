@@ -9,8 +9,8 @@
 }
 
 .main{
-    /* background-image: linear-gradient(white,yellow,var(--custom-yellow-two)); */
-    background-image: linear-gradient(white,grey,#121212);
+    background-image: linear-gradient(white,yellow,var(--custom-yellow-two));
+    /*background-image: linear-gradient(white,grey,#121212);*/
     height: 100vh;
     width: 100vw;
 

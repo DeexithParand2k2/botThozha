@@ -249,6 +249,29 @@ function nextSearch(chatArr){
             chk=1;
             break;
         }
+        else if((chatArr.includes("play") && chatArr.includes("wordle"))||(chatArr.includes("launch") && chatArr.includes("wordle"))){
+            //getJoke();
+            //wordle
+            setTimeout(function(){createBotReply("Starting wordle..."); },3000);
+            setTimeout(function(){
+                window.open("https://www.nytimes.com/games/wordle/index.html"); 
+            },6000);
+            chk=1;
+            break;
+        }
+        else if((chatArr.includes("your") && chatArr.includes("name"))){
+            setTimeout(function(){createBotReply("My name is "+botName); },3000);
+            chk=1;
+            break;
+        }
+        else if((chatArr.includes("open") && chatArr.includes("youtube"))||(chatArr.includes("launch") && chatArr.includes("youtube"))){
+            setTimeout(function(){createBotReply("Starting youtube..."); },3000);
+            setTimeout(function(){
+                window.open("https://www.youtube.com/"); 
+            },6000);
+            chk=1;
+            break;
+        }
         else if((chatArr.includes("make") && chatArr.includes("me") && (chatArr.includes("happy")))|| (chatArr.includes("i") && chatArr.includes("am") && (chatArr.includes("sad"))) ||(chatArr.includes("entertain") && chatArr.includes("me"))){
             setTimeout(function(){createBotReply("Can I tell you a joke?"); },1000);
             
