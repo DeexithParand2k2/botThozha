@@ -7,6 +7,11 @@ function startHere(){
 }
 
 function createBotReply(chatString){
+
+    // if(chatString=="" || chatString==NULL){
+    //     return;
+    // }
+
     var newDiv = document.createElement("div");
 
     var styles = {
@@ -15,8 +20,9 @@ function createBotReply(chatString){
         "padding"    : "10px",
         "margin"     : "10px",
 
-        "overflow"   : "auto",
-        "resize"     : "none",
+        //"overflow"   : "auto",
+        //"resize"     : "vertical",
+        "height"     : "auto",
 
         "width"      : "fit-content",
 
@@ -48,8 +54,10 @@ function createUserReply(chatString){
         "padding"    : "10px",
         "margin"     : "10px",
 
-        "overflow"   : "auto",
-        "resize"     : "none",
+        //"overflow"   : "auto",
+        //"resize"     : "vertical",
+
+        "height"     : "auto",
 
         "width"      : "fit-content",
 
@@ -88,6 +96,7 @@ function greetchat(chatArr){
             check = 1;
         }
     }
+
     if(check==0){
         var tempString = chatArr.join(' ');
         for(let i=0;i<greet.length;i++){
@@ -99,8 +108,6 @@ function greetchat(chatArr){
         }
     }
     if(check==0){
-        //createBotReply("Sorry I don't understand!!!");
-        //setTimeout( function() { createBotReply("Sorry I am not able to understand!!!"); }, 2000);
         nextSearch(chatArr);
     }
 
@@ -258,15 +265,31 @@ function nextSearch(chatArr){
     }
 
     if(chk==0){
-        setTimeout( function() { createBotReply("Sorry, I'm unable to understand what you are saying.\n Can you kindly Rephrase"); }, 2000);
+        setTimeout( function() { createBotReply("Sorry, I'm unable to understand what you are saying.<br>Can you kindly Rephrase?"); }, 2000);
     }
 }
 
 function askQst(){
-    var input = window.prompt("Ask Question : ");
+    var inputBox = document.getElementById('inputBox');
+    var input = inputBox.value;
     createUserReply(input);
-
+    
     greetchat(wordSplit(input.toLowerCase()));
+}
+
+document.addEventListener('keydown',someEvent = (event) =>{
+    var recEvent = event.key;
+    if(recEvent == 'Enter'){
+        document.getElementById("tick").click();
+        document.getElementById("tick").style.color = "darkorange";
+        setTimeout(revertColor, 100);
+    }
+},true);
+
+function revertColor(){
+    document.getElementById("tick").style.color = "black";
+    var inputBox = document.getElementById('inputBox');
+    inputBox.value = "";
 }
 
 

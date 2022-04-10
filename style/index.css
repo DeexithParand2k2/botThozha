@@ -16,12 +16,16 @@ font-family: 'VT323', monospace;
     width: 100vw;
     padding: 20px;
     box-sizing: border-box;
-    overflow-x: hidden;
-
+    
     display: flex;
     flex-direction: column;
+
+    overflow-x: hidden;
 }
 
+/*
+ VERY IMPORTANT
+ -------------- 
 .chatBox{
     block-size: fit-content;
     box-sizing: border-box;
@@ -45,7 +49,6 @@ font-family: 'VT323', monospace;
 }
 
 .UserBox{
-    /*Very important*/
     align-self: flex-end;
 
     block-size: fit-content;
@@ -67,21 +70,7 @@ font-family: 'VT323', monospace;
     color: #6EFF86;
     font-family: 'Source Sans Pro', sans-serif;
     font-weight: bold;
-}
-
-#pen{
-    color: aliceblue;
-    position: absolute;
-    /* top: 90%;
-    left: 95%; */
-    top: 20%;
-    left: 50%;
-    /* background-color: rgba(240,248,250,0.8); */
-    background-color: aliceblue;
-    padding: 10px;
-    border-radius: 50px;
-    cursor: pointer;
-}
+} */
 
 .gameCanvas{
     height: 300px;
@@ -110,44 +99,50 @@ font-family: 'VT323', monospace;
 }
 
 .chatFoot{
-    /* padding: 10px;
-    margin: 20px; */
     box-sizing: border-box;
 
     background-color: transparent;
-    border: 1px solid bisque;
 
     width: 100%;
     height: auto;
 
     border-radius: 5px;
-    background-color: beige;
+    background-color: whitesmoke;
 
     display: flex;
     justify-content: space-between;
 }
 
-.inputBox{
-    background-color: transparent;
-    border: none;
-}
-
-#send{
-    margin: 5px;
-    padding: 5px;
-    background-color: transparent;
-    color: #121212;
-}
-
-#send:hover{
-    opacity: 0.6;
-}
-
 .marginDiv{
-    background-color: transparent;
     height: 50px;
     padding: 30px;
 
     top: 0;
     position: sticky;
+}
+
+.inputBox{
+    outline: none;
+    border: none;
+    background-color: transparent;
+    border: none;
+
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: bold;
+
+    caret-color: red;
+
+    margin: 10px;
+    padding: 10px;
+}
+
+#tick{
+    background-color: transparent;
+    align-self: center;
+    padding-right: 20px;
+}
+
+#tick:hover{
+    color: darkorange;
+    cursor: pointer;
 }
