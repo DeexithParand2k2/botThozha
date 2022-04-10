@@ -4,16 +4,29 @@
         <title>First Page</title>
         <link rel="stylesheet" type="text/css" href="../style/firstpage.css">
         <script src="https://kit.fontawesome.com/4917270fc0.js" crossorigin="anonymous"></script>
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200&display=swap');
+        </style>
         <script src="../script/firstpage.js" type="text/javascript" rel="script"></script>
     </head>
     <body class="main" id="main">
+        <div class="modal" id="modal">
+            <div class="modalContent">
+                <input type="text" class="username" id="username" autocomplete="off" placeholder="username" spellcheck="false">
+                <i id="enter" tabindex="1" class="fas fa-solid fa-check fa-2x" onclick="getUsername()"></i>
+            </div>
+        </div>
         <div class="header">
             <h1 class="title">Thozha.</h1>
-            <i id="user" class="fas fa-solid fa-user fa-2x"></i>
-            <i id="lock" class="fas fa-solid fa-lock fa-2x" onclick="changeHeader()"></i>
+            <div class="icons">
+                <i id="user" class="fas fa-solid fa-user fa-2x"></i>
+                <i id="lock" class="fas fa-solid fa-lock fa-2x" onclick="modalDisplay()"></i>
+                <i id="info" class="fas fa-solid fa-info fa-1x" onclick="infoBoxText()"></i>
+            </div>
+            <div class="infoBox">Eager to see what's inside the bioscope?<br>Enter your username to see what's inside</div>
         </div>
         <div class="biobox">
-            <i id="eye" class="fas fa-solid fa-eye fa-3x"></i>
+            <a href="../page/secondpage.html" style="text-decoration: none;"><i id="eye" class="fas fa-solid fa-eye fa-3x"></i></a>
             <img class="bioscope" src="../bioscope.png" alt="bioscope">
         </div>
         <div class="footer"></div>

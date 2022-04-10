@@ -4,7 +4,7 @@
 //selected Gender, check = gender selection done
 {
     //need to get from previous page
-    var username;
+    //var username;
     //need to pass to next page where the chat is 
     var selectedGender;
 
@@ -51,4 +51,14 @@ function genderMsgFemale(){
     selectedGender = "Kayal";
 
     tempText.innerHTML = "Can we confirm" + "<br />" + "&nbsp;&nbsp;Bot Kayal";
+}
+
+function updateUserName(){
+
+    const usernameStr = localStorage.getItem('username');
+    console.log(usernameStr);
+
+    var temp = document.getElementById('user');
+    //this is the variable from firstpage.html
+    temp.innerHTML = usernameStr;
 }
