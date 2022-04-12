@@ -1,0 +1,148 @@
+/*
+font-family: 'Source Sans Pro', sans-serif; 
+background-color: #D7A23F; 
+background-color: #6EFF86;
+font-family: 'VT323', monospace;
+*/
+
+*{
+    margin: 0px;
+    padding: 0px;
+    background-color: #121212;
+}
+
+.main{
+    height: auto;
+    width: 100vw;
+    padding: 20px;
+    box-sizing: border-box;
+    
+    display: flex;
+    flex-direction: column;
+
+    overflow-x: hidden;
+}
+
+/*
+ VERY IMPORTANT
+ -------------- 
+.chatBox{
+    block-size: fit-content;
+    box-sizing: border-box;
+    padding: 10px;
+    margin: 10px;
+
+    overflow: auto;
+    resize: none;
+
+    width: fit-content;
+
+    min-width: 30%;
+    max-width: 100%;
+
+    border: 1px solid #6EFF86;
+    border-radius: 10px;
+
+    color: white;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: bold;
+}
+
+.UserBox{
+    align-self: flex-end;
+
+    block-size: fit-content;
+    box-sizing: border-box;
+    padding: 10px;
+    margin: 10px;
+
+    overflow: auto;
+    resize: none;
+
+    width: fit-content;
+
+    min-width: 30%;
+    max-width: 100%;
+
+    border: 1px solid white;
+    border-radius: 10px;
+
+    color: #6EFF86;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: bold;
+} */
+
+.gameCanvas{
+    height: 300px;
+    width: 400px;
+    box-sizing: border-box;
+
+    margin: 10px;
+
+    display: flex;
+    flex-direction: row;
+
+    border: dashed 3px white;
+
+    align-self: center;
+
+    display: none;
+}
+
+.userHand{
+    flex: 1;
+    border-left: dashed 3px white;
+}
+
+.botHand{
+    flex: 1;
+}
+
+.chatFoot{
+    box-sizing: border-box;
+
+    background-color: transparent;
+
+    width: 100%;
+    height: auto;
+
+    border-radius: 5px;
+    background-color: whitesmoke;
+
+    display: flex;
+    justify-content: space-between;
+}
+
+.marginDiv{
+    height: 50px;
+    padding: 30px;
+
+    top: 0;
+    position: sticky;
+}
+
+.inputBox{
+    outline: none;
+    border: none;
+    background-color: transparent;
+    border: none;
+
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: bold;
+
+    caret-color: red;
+
+    margin: 10px;
+    padding: 10px;
+}
+
+#tick{
+    background-color: transparent;
+    align-self: center;
+    padding-right: 20px;
+}
+
+#tick:hover{
+    color: darkorange;
+    cursor: pointer;
+}

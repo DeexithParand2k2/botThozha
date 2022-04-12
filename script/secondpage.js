@@ -33,7 +33,7 @@ function genderPage(){
         tempText.innerHTML = "Starting Chat...";
         setTimeout( function() { 
             //window.open("");
-            window.open("C:/Users/deexi/OneDrive/Desktop/Thozha/index.html","_self");
+            window.open("C:/Users/deexi/OneDrive/Desktop/Thozha/page/chat.html","_self");
         }, 2000);
     }
      
