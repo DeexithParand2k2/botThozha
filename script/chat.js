@@ -203,7 +203,7 @@ function getJoke(){
 
     var someString = jokes[index];
 
-    setTimeout(function(){createBotReply(someString); },3000);
+    setTimeout(function(){createBotReply(someString); },2000);
 }
 
 /*2. date, time, month, year*/
@@ -213,6 +213,18 @@ function nextSearch(chatArr){
     for(let i=0;i<chatArr.length;i++){
         if((chatArr.includes("time") && chatArr.length==1) || (chatArr.includes("time") && chatArr.includes("is") && chatArr.includes("it")) || (chatArr.includes("time") && chatArr.includes("please")) || (chatArr.includes("time") && chatArr.includes("now"))){
             getTime();
+            chk=1;
+            break;
+        }
+        else if((chatArr.includes("game") && chatArr.includes("alien") && chatArr.includes("play"))||
+        (chatArr.includes("how") && chatArr.includes("game") && chatArr.includes("alien") && (chatArr.includes("abt")||chatArr.includes("about")))||
+        (chatArr.includes("game") && chatArr.includes("we") && chatArr.includes("alien") && chatArr.includes("can"))){
+            setTimeout(function(){createBotReply("Yaay!! I'm excited to introduce my brother to you..."); },3000);
+            setTimeout(function(){createBotReply("Cuzz he is my creator's first project..."); },3500);
+            setTimeout(function(){
+                window.open("https://clever-bhaskara-7b82e6.netlify.app"); 
+            },6000);
+            //createBotReply("Why not, Best of 3 Wins...");
             chk=1;
             break;
         }
@@ -250,12 +262,15 @@ function nextSearch(chatArr){
             break;
         }
         else if((chatArr.includes("play") && chatArr.includes("wordle"))||(chatArr.includes("launch") && chatArr.includes("wordle"))){
-            //getJoke();
-            //wordle
             setTimeout(function(){createBotReply("Starting wordle..."); },3000);
             setTimeout(function(){
                 window.open("https://www.nytimes.com/games/wordle/index.html"); 
             },6000);
+            chk=1;
+            break;
+        }
+        else if((chatArr.includes("created") && chatArr.includes("you"))||(chatArr.includes("your") && chatArr.includes("creator"))){
+            setTimeout(function(){createBotReply("I was created by Deexith on 20/4/22"); },3000);
             chk=1;
             break;
         }
@@ -272,6 +287,58 @@ function nextSearch(chatArr){
             chk=1;
             break;
         }
+        else if((chatArr.includes("i") && chatArr.includes("hungry"))||(chatArr.includes("i'm") && chatArr.includes("hungry"))){
+            var reply;
+            reply = window.prompt("If you'd like to order food, enter your preference : ");
+            reply = reply.toLowerCase();
+
+            if(reply=="zomato"){
+                setTimeout(function(){createBotReply("Opening Zomato..."); },4000);
+                setTimeout(function(){
+                    window.open("https://www.zomato.com/"); 
+                },6000);
+                chk=1;
+                break;
+            }
+            else if(reply=="swiggy"){
+                setTimeout(function(){createBotReply("Opening Swiggy..."); },4000);
+                setTimeout(function(){
+                    window.open("https://www.swiggy.com/"); 
+                },6000);
+                chk=1;
+                break;
+            }
+        }
+
+        else if((chatArr.includes("book") && chatArr.includes("cab"))||(chatArr.includes("i") && (chatArr.includes("wanna")||chatArr.includes("want")) && chatArr.includes("travel"))){
+            var reply;
+            reply = window.prompt("Enter your preference, OLA or UBER : ");
+            reply = reply.toLowerCase();
+
+            if(reply=="ola"){
+                setTimeout(function(){createBotReply("Opening Ola..."); },4000);
+                setTimeout(function(){
+                    window.open("https://www.olacabs.com/"); 
+                },6000);
+                setTimeout(function(){
+                    createBotReply("Enjoy your ride!!!");
+                },8000);
+                chk=1;
+                break;
+            }
+            else if(reply=="uber"){
+                setTimeout(function(){createBotReply("Opening Uber..."); },4000);
+                setTimeout(function(){
+                    window.open("https://www.uber.com/in/en/"); 
+                },6000);
+                setTimeout(function(){
+                    createBotReply("Enjoy your ride!!!"); 
+                },8000);
+                chk=1;
+                break;
+            }
+        }
+
         else if((chatArr.includes("make") && chatArr.includes("me") && (chatArr.includes("happy")))|| (chatArr.includes("i") && chatArr.includes("am") && (chatArr.includes("sad"))) ||(chatArr.includes("entertain") && chatArr.includes("me"))){
             setTimeout(function(){createBotReply("Can I tell you a joke?"); },1000);
             
@@ -282,14 +349,14 @@ function nextSearch(chatArr){
             console.log(reply);
 
             if(reply=="yes"){
-                setTimeout(function(){createUserReply("yes"); },8000);
-                setTimeout(function(){getJoke(); },10000);
+                setTimeout(function(){createUserReply("yes"); },4000);
+                setTimeout(function(){getJoke(); },8000);
                 chk=1;
                 break;
             }
             else{
-                setTimeout(function(){createUserReply("no"); },8000);
-                setTimeout(function(){createBotReply("As you say, Sir"); },10000);
+                setTimeout(function(){createUserReply("no"); },4000);
+                setTimeout(function(){createBotReply("As you say, Sir"); },8000);
                 chk=1;
                 break;
             }

@@ -131,6 +131,7 @@ font-family: 'VT323', monospace;
     font-weight: bold;
 
     caret-color: red;
+    width: 100%;
 
     margin: 10px;
     padding: 10px;
