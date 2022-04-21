@@ -274,8 +274,32 @@ function nextSearch(chatArr){
             chk=1;
             break;
         }
-        else if((chatArr.includes("your") && chatArr.includes("name"))){
+        else if((chatArr.includes("your") && chatArr.includes("name") && chatArr.includes("what"))){
             setTimeout(function(){createBotReply("My name is "+botName); },3000);
+            chk=1;
+            break;
+        }
+        else if((chatArr.includes("your") && chatArr.includes("age") && chatArr.includes("what"))){
+            setTimeout(function(){createBotReply("I am currently one month and one day old"); },3000);
+            chk=1;
+            break;
+        }
+        else if((chatArr.includes("my") && chatArr.includes("age") && chatArr.includes("what"))){
+            
+            function calcAge(dob){ 
+                var diff_ms = Date.now() - dob.getTime();
+                var age_dt = new Date(diff_ms); 
+              
+                return Math.abs(age_dt.getUTCFullYear() - 1970);
+            }
+            
+            var reply;
+            reply = window.prompt("Enter your DOB with [yyyy,mm,dd] : ");
+            reply = reply.toLowerCase();
+
+            setTimeout(function(){
+                createBotReply("You are currently "+calcAge(new Date(reply))+" years old"); 
+            },3000);
             chk=1;
             break;
         }
@@ -287,7 +311,7 @@ function nextSearch(chatArr){
             chk=1;
             break;
         }
-        else if((chatArr.includes("i") && chatArr.includes("hungry"))||(chatArr.includes("i'm") && chatArr.includes("hungry"))){
+        else if((chatArr.includes("i") && chatArr.includes("hungry"))||(chatArr.includes("i'm") && chatArr.includes("hungry"))||(chatArr.includes("me") && chatArr.includes("food"))){
             var reply;
             reply = window.prompt("If you'd like to order food, enter your preference : ");
             reply = reply.toLowerCase();
@@ -297,6 +321,9 @@ function nextSearch(chatArr){
                 setTimeout(function(){
                     window.open("https://www.zomato.com/"); 
                 },6000);
+                setTimeout(function(){
+                    createBotReply("A recipe has no soul. You, as the cook, must bring soul to the recipe.!!!");
+                },8000);
                 chk=1;
                 break;
             }
@@ -305,6 +332,9 @@ function nextSearch(chatArr){
                 setTimeout(function(){
                     window.open("https://www.swiggy.com/"); 
                 },6000);
+                setTimeout(function(){
+                    createBotReply("A recipe has no soul. You, as the cook, must bring soul to the recipe.!!!");
+                },8000);
                 chk=1;
                 break;
             }
@@ -321,7 +351,7 @@ function nextSearch(chatArr){
                     window.open("https://www.olacabs.com/"); 
                 },6000);
                 setTimeout(function(){
-                    createBotReply("Enjoy your ride!!!");
+                    createBotReply("Stop chasing shadows just enjoy the ride.!!!");
                 },8000);
                 chk=1;
                 break;
@@ -332,7 +362,65 @@ function nextSearch(chatArr){
                     window.open("https://www.uber.com/in/en/"); 
                 },6000);
                 setTimeout(function(){
-                    createBotReply("Enjoy your ride!!!"); 
+                    createBotReply("Happiness is a way of travel, not a destination. Enjoy the ride!!!"); 
+                },8000);
+                chk=1;
+                break;
+            }
+        }
+
+        else if(((chatArr.includes("i") || chatArr.includes("me")) && chatArr.includes("buy") && (chatArr.includes("electronics") || chatArr.includes("merchandise") || chatArr.includes("gadgets") || chatArr.includes("stationary")  || chatArr.includes("mobile") || chatArr.includes("laptop")))){
+            var reply;
+            reply = window.prompt("Choose your fav E-commerce, AMAZON or FLIPKART : ");
+            reply = reply.toLowerCase();
+
+            if(reply=="amazon"){
+                setTimeout(function(){createBotReply("Opening amazon..."); },4000);
+                setTimeout(function(){
+                    window.open("https://www.amazon.in/"); 
+                },6000);
+                setTimeout(function(){
+                    createBotReply("Whoever said that money can't buy happiness simply didn't know where to go shopping!!!");
+                },8000);
+                chk=1;
+                break;
+            }
+            else if(reply=="flipkart"){
+                setTimeout(function(){createBotReply("Opening flipkart..."); },4000);
+                setTimeout(function(){
+                    window.open("https://www.flipkart.com/"); 
+                },6000);
+                setTimeout(function(){
+                    createBotReply("I always say shopping is cheaper than a psychiatrist!!!"); 
+                },8000);
+                chk=1;
+                break;
+            }
+        }
+
+        else if((chatArr.includes("book") && chatArr.includes("movie")  && chatArr.includes("ticket"))||(chatArr.includes("i") && (chatArr.includes("wanna")||chatArr.includes("want")) && chatArr.includes("movie"))){
+            var reply;
+            reply = window.prompt("Enter your preference, Bookmyshow or Ticketnew : ");
+            reply = reply.toLowerCase();
+
+            if(reply=="bookmyshow"){
+                setTimeout(function(){createBotReply("Opening Bookmyshow..."); },4000);
+                setTimeout(function(){
+                    window.open("https://in.bookmyshow.com/explore/home/chennai"); 
+                },6000);
+                setTimeout(function(){
+                    createBotReply("Enjoy your popcorn and enjoy the show. It's just a movie, so have fun! ");
+                },8000);
+                chk=1;
+                break;
+            }
+            else if(reply=="ticketnew"){
+                setTimeout(function(){createBotReply("Opening Ticketnew..."); },4000);
+                setTimeout(function(){
+                    window.open("https://www.ticketnew.com/Movie-Ticket-Online-booking/C/Chennai"); 
+                },6000);
+                setTimeout(function(){
+                    createBotReply("Enjoy your popcorn and enjoy the show. It's just a movie, so have fun! "); 
                 },8000);
                 chk=1;
                 break;
