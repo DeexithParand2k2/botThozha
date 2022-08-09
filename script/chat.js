@@ -216,6 +216,11 @@ function nextSearch(chatArr){
             chk=1;
             break;
         }
+        else if((chatArr.includes("how") && (chatArr.includes("are")||chatArr.includes("r")) && (chatArr.includes("ya")||chatArr.includes("you")))){
+            setTimeout(function(){createBotReply("I'm fine, Thanks for asking. Hope you're fine too."); },3000);
+            chk=1;
+            break;
+        }
         else if((chatArr.includes("game") && chatArr.includes("alien") && chatArr.includes("play"))||
         (chatArr.includes("how") && chatArr.includes("game") && chatArr.includes("alien") && (chatArr.includes("abt")||chatArr.includes("about")))||
         (chatArr.includes("game") && chatArr.includes("we") && chatArr.includes("alien") && chatArr.includes("can"))){
@@ -307,6 +312,22 @@ function nextSearch(chatArr){
             setTimeout(function(){createBotReply("Starting youtube..."); },3000);
             setTimeout(function(){
                 window.open("https://www.youtube.com/"); 
+            },6000);
+            chk=1;
+            break;
+        }
+        else if((chatArr.includes("buy") && chatArr.includes("clothes"))||(chatArr.includes("get") && chatArr.includes("dresses"))||(chatArr.includes("buy") && chatArr.includes("dress"))){
+            setTimeout(function(){createBotReply("Opening Myntra..."); },3000);
+            setTimeout(function(){
+                window.open("https://www.myntra.com/"); 
+            },6000);
+            chk=1;
+            break;
+        }
+        else if((chatArr.includes("book") && chatArr.includes("train")  && chatArr.includes("ticket"))){
+            setTimeout(function(){createBotReply("Opening IRCTC..."); },3000);
+            setTimeout(function(){
+                window.open("https://www.irctc.co.in/nget/train-search"); 
             },6000);
             chk=1;
             break;
